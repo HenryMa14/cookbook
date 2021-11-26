@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Snippet: In the Library &#8212; Actuaries&#39; Analytical Cookbook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/actuaries-logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Actuaries' Analytical Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about_py.html">
+   About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Setting up Your Python Environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_by_example.html">
+   An Introductory Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="learn_more.html">
+   Learn More
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to R
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about_R.html">
+   About R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started_R.html">
+   Setting Up R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introductory_R.html">
+   Introduction to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intermediate_R.html">
+   Next Steps With R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_ten_r_packages.html">
+   Useful Packages
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workflow Management
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Segmentation and Technical Price
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="multitasking_risk_pricing.html">
+   Py/R: Multitasking Risk Pricing Using Deep Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="py_shap_values.html">
+   Py: Explainable Models with SHAP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Language Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="R_case_study_word_cloud.html">
+   R: Word Cloud Case Study
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="textClassificationEntry.html">
+   Py: Text Classification
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Ethics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="automated_decision.html">
+   Automated Decision-Making Systems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Useful Python Packages
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Useful_Python_packages.html">
+   Useful Python packages for Data Science
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/AnalyticsSnippetIntheLibrary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ActuariesInstitute/cookbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        <a class="edit-button" href="https://github.com/ActuariesInstitute/cookbook/edit/main/cookbook/docs/AnalyticsSnippetIntheLibrary.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ActuariesInstitute/cookbook/main?urlpath=tree/cookbook/docs/AnalyticsSnippetIntheLibrary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/ActuariesInstitute/cookbook/blob/main/cookbook/docs/AnalyticsSnippetIntheLibrary.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-libraries-and-packages-font">
+   <font color="blue">
+    Libraries and Packages
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-reading-the-data-font">
+   <font color="blue">
+    Reading the Data
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-what-sort-of-items-are-being-checked-out-font">
+   <font color="blue">
+    What sort of items are being checked out?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-titles-font">
+   <font color="blue">
+    Titles
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-blue-call-for-more-snippets-font">
+   <font color="blue">
+    Call for more snippets
+    <font>
+    </font>
+   </font>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="analytics-snippet-in-the-library">
+<h1>Analytics Snippet: In the Library<a class="headerlink" href="#analytics-snippet-in-the-library" title="Permalink to this headline">¶</a></h1>
+<p>By Jacky Poon</p>
+<p>*This article was originally published on <a class="reference external" href="https://www.actuaries.digital/2018/06/14/analytics-snippet-in-the-library/">Actuaries Digital</a>, the magazine of the Actuaries Institute Australia, on 14 June 2018 as “Analytics Snippet: In the Library”</p>
+<p>Whether you are a complete beginner or an experienced practitioner, we hope you can learn a trick or two from this column.</p>
+<p>In this snippet we will be diving into checkouts of book titles – from the Brisbane City Council Library and its branches during three days in December – to see what Brisbanians have been reading!</p>
+<div class="section" id="font-color-blue-libraries-and-packages-font">
+<h2><font color='blue'>Libraries and Packages</font><a class="headerlink" href="#font-color-blue-libraries-and-packages-font" title="Permalink to this headline">¶</a></h2>
+<p>In R, we will be using:</p>
+<ul class="simple">
+<li><p>plotly for the pie charts,</p></li>
+<li><p>dplyr for data manipulation,</p></li>
+<li><p>tm for text mining,</p></li>
+<li><p>wordcloud for word clouds, and</p></li>
+<li><p>RColorBrewer for a touch of colour.</p></li>
+<li><p>library(“plotly”),</p></li>
+<li><p>library(“dplyr”),</p></li>
+<li><p>library(“tm”),</p></li>
+<li><p>library(“wordcloud”),</p></li>
+<li><p>library(“RColorBrewer”).</p></li>
+</ul>
+<p>If you do not have these packages installed previously, you will need to run install.packages to install th (e.g. install.packages(“plotly”))</p>
+</div>
+<div class="section" id="font-color-blue-reading-the-data-font">
+<h2><font color='blue'>Reading the Data</font><a class="headerlink" href="#font-color-blue-reading-the-data-font" title="Permalink to this headline">¶</a></h2>
+<p>The data used for this can be downloaded from the <a class="reference external" href="https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date">Brisbane City Open Data Portal</a>, which is publicly available under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>.</p>
+<p>First, in R, we provision a temporary file location for the download, and then download the zip file to the location:</p>
+<p>temp-&gt;tempfile();</p>
+<p>download.file(“<a class="reference external" href="https://www.data.brisbane.qld.gov.au/data/dataset/53d02339-1818-43df-9845-83808e5e247e/resource/ed431a68-15f2-430e-b140-4c603597680a/download/library-checkouts-all-branches-december-2017.csv.zip">https://www.data.brisbane.qld.gov.au/data/dataset/53d02339-1818-43df-9845-83808e5e247e/resource/ed431a68-15f2-430e-b140-4c603597680a/download/library-checkouts-all-branches-december-2017.csv.zip</a>”)</p>
+<p>We then unzip and read the data from the comma separated values file.</p>
+<p>data &lt;- read.csv(unz(temp, “Library Checkouts all Branches December 2017.csv”))
+Inspecting the data to show the first 100 records with head(), we have title, author, item type, age, and the library branch it was checked out from, as well as various IDs. Click on the arrow on the top right to see more columns.</p>
+<p>head(data, n=100)</p>
+<div>
+<img src="attachment:image.png" width="500"/>
+</div><p>There is a language column, but it has many blanks and “UNKNOWN” values so that does not appear to be very useful.</p>
+</div>
+<div class="section" id="font-color-blue-what-sort-of-items-are-being-checked-out-font">
+<h2><font color='blue'>What sort of items are being checked out?</font><a class="headerlink" href="#font-color-blue-what-sort-of-items-are-being-checked-out-font" title="Permalink to this headline">¶</a></h2>
+<p>It appears that Age and Item.type fields may shed some light on the types of material being borrowed, so we will create some charts by those dimensions.</p>
+<p>To create charts in R we typically need to specify the details of the chart design in code, including:</p>
+<ul class="simple">
+<li><p>data source (in this case, counts of data by Age and Item.type respectively),</p></li>
+<li><p>X axis,</p></li>
+<li><p>Y axis,</p></li>
+<li><p>labels,</p></li>
+<li><p>positioning, and</p></li>
+<li><p>any other formatting</p></li>
+</ul>
+<p>This makes it less user friendly than a drag-and-drop tool like Excel or Tableau initially. However it does offer transparency, the ability to automate, and the choice of many different charting packages with their own strengths that can all be used in the one R document together with other analysis logic.</p>
+<p>First we will plot a summary of the count of items by Age in a simple bar chart:</p>
+<p>plot_ly(data=count(data, Age), x = ~Age, y = ~n, type = ‘bar’)</p>
+<div>
+<img src="attachment:image.png" width="500"/>
+</div><p>We see that children’s literature seems to be quite popular, with 39% of items being from the “Juvenile” category.</p>
+<p>The second chart is the much maligned pie chart, setting the data to be a count by Item.Type.</p>
+<p>plot_ly(data=count(data, Item.type), labels = ~Item.type, values= ~n, type = ‘pie’, textinfo = ‘label+percent’)</p>
+<div>
+<img src="attachment:image.png" width="500"/>
+</div><p>Although one might commonly associate libraries with books, 12% of check outs from Brisbane libraries are media items such as DVDs.</p>
+<p>It also becomes apparent the data is not perfect – if you mouse over the interactive plot carefully, there are two items of type “2017” which seems to be a data issue.</p>
+</div>
+<div class="section" id="font-color-blue-titles-font">
+<h2><font color='blue'>Titles</font><a class="headerlink" href="#font-color-blue-titles-font" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we will wrap up with a word cloud to visualise the content borrowed over the pre-holiday period.</p>
+<p>Some data cleaning is required. It appears from the earlier data inspection that many titles also include the author after a slash, so first we will strip out the section before the slash to obtain the real title.</p>
+<p>After converting to a “corpus” dataset of words, we use the “tm” text mining package to clean the data to only include meaningful words, and not the following:</p>
+<ol class="simple">
+<li><p>Numeric digits 0-9 and,</p></li>
+<li><p>Stop words, which are common English words such as “a” and “the” – otherwise they would dominate the word cloud over meaningful words,</p></li>
+<li><p>Media types such as “dvd” – many titles have e.g. “[dvd]” in title, but having analysed item type earlier we want to focus now on the content,</p></li>
+<li><p>And formatting such as punctuation and extra white spaces.</p></li>
+</ol>
+<p>The operations are chained together using dplyr’s pipe operator (%&gt;%).</p>
+<p>titles_corpus &lt;- sapply(strsplit(as.character(data$Title), “/”), <code class="docutils literal notranslate"><span class="pre">[</span></code>, 1) %&gt;%<br />
+VectorSource() %&gt;%<br />
+Corpus() %&gt;%<br />
+tm_map(content_transformer(tolower)) %&gt;%<br />
+tm_map(removeNumbers) %&gt;%<br />
+tm_map(removeWords, stopwords(“english”)) %&gt;%<br />
+tm_map(removeWords, c(“dvd”, “book”, “sound”, “recording”, “novel”)) %&gt;%
+tm_map(removePunctuation) %&gt;%
+tm_map(stripWhitespace)</p>
+<p>We can then generate the word cloud.</p>
+<p>wordcloud(titles_corpus, max.words = 100, scale = c(5, 0.5), random.order = FALSE, colors=brewer.pal(8, “Dark2”))</p>
+<div>
+<img src="attachment:image.png" width="500"/>
+</div><p>Reviewing this visualisation, some key insights would be that Australia appears to be a popular topic for reading, and Christmas titles unsurprisingly feature prominently for the month of December.</p>
+</div>
+<div class="section" id="font-color-blue-call-for-more-snippets-font">
+<h2><font color = 'blue'>Call for more snippets<font><a class="headerlink" href="#font-color-blue-call-for-more-snippets-font" title="Permalink to this headline">¶</a></h2>
+<p>This concludes our trip to the library for now. We are looking to run this as a regular column, so if you have an idea for a cool visualisation, an interesting model, we would like to hear from you! Please send them in to <a class="reference external" href="mailto:ActuariesMag&#37;&#52;&#48;actuaries&#46;asn&#46;au">ActuariesMag<span>&#64;</span>actuaries<span>&#46;</span>asn<span>&#46;</span>au</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "ActuariesInstitute/cookbook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By YDAWG, DAPC, YAC and other contributors. The Institute wishes it to be understood that any opinions put forward in this publication are not necessarily those of the Institute.<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
