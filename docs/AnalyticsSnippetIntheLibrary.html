@@ -369,19 +369,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Analytics Snippet: In the Library</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Analytics Snippet: In the Library</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#font-color-blue-libraries-and-packages-font">
    <font color="blue">
@@ -421,7 +422,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -543,133 +546,8 @@ tm_map(stripWhitespace)</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="analytics-snippet-in-the-library">
-<h1>Analytics Snippet: In the Library<a class="headerlink" href="#analytics-snippet-in-the-library" title="Permalink to this headline">¶</a></h1>
-<p>By Jacky Poon</p>
-<p>*This article was originally published on <a class="reference external" href="https://www.actuaries.digital/2018/06/14/analytics-snippet-in-the-library/">Actuaries Digital</a>, the magazine of the Actuaries Institute Australia, on 14 June 2018 as “Analytics Snippet: In the Library”</p>
-<p>Whether you are a complete beginner or an experienced practitioner, we hope you can learn a trick or two from this column.</p>
-<p>In this snippet we will be diving into checkouts of book titles – from the Brisbane City Council Library and its branches during three days in December – to see what Brisbanians have been reading!</p>
-<div class="section" id="font-color-blue-libraries-and-packages-font">
-<h2><font color='blue'>Libraries and Packages</font><a class="headerlink" href="#font-color-blue-libraries-and-packages-font" title="Permalink to this headline">¶</a></h2>
-<p>In R, we will be using:</p>
-<ul class="simple">
-<li><p>plotly for the pie charts,</p></li>
-<li><p>dplyr for data manipulation,</p></li>
-<li><p>tm for text mining,</p></li>
-<li><p>wordcloud for word clouds, and</p></li>
-<li><p>RColorBrewer for a touch of colour.</p></li>
-<li><p>library(“plotly”),</p></li>
-<li><p>library(“dplyr”),</p></li>
-<li><p>library(“tm”),</p></li>
-<li><p>library(“wordcloud”),</p></li>
-<li><p>library(“RColorBrewer”).</p></li>
-</ul>
-<p>If you do not have these packages installed previously, you will need to run install.packages to install th (e.g. install.packages(“plotly”))</p>
-</div>
-<div class="section" id="font-color-blue-reading-the-data-font">
-<h2><font color='blue'>Reading the Data</font><a class="headerlink" href="#font-color-blue-reading-the-data-font" title="Permalink to this headline">¶</a></h2>
-<p>The data used for this can be downloaded from the <a class="reference external" href="https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date">Brisbane City Open Data Portal</a>, which is publicly available under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>.</p>
-<p>First, in R, we provision a temporary file location for the download, and then download the zip file to the location:</p>
-<p>temp-&gt;tempfile();</p>
-<p>download.file(“<a class="reference external" href="https://www.data.brisbane.qld.gov.au/data/dataset/53d02339-1818-43df-9845-83808e5e247e/resource/ed431a68-15f2-430e-b140-4c603597680a/download/library-checkouts-all-branches-december-2017.csv.zip">https://www.data.brisbane.qld.gov.au/data/dataset/53d02339-1818-43df-9845-83808e5e247e/resource/ed431a68-15f2-430e-b140-4c603597680a/download/library-checkouts-all-branches-december-2017.csv.zip</a>”)</p>
-<p>We then unzip and read the data from the comma separated values file.</p>
-<p>data &lt;- read.csv(unz(temp, “Library Checkouts all Branches December 2017.csv”))
-Inspecting the data to show the first 100 records with head(), we have title, author, item type, age, and the library branch it was checked out from, as well as various IDs. Click on the arrow on the top right to see more columns.</p>
-<p>head(data, n=100)</p>
-<div>
-<img src="attachment:image.png" width="500"/>
-</div><p>There is a language column, but it has many blanks and “UNKNOWN” values so that does not appear to be very useful.</p>
-</div>
-<div class="section" id="font-color-blue-what-sort-of-items-are-being-checked-out-font">
-<h2><font color='blue'>What sort of items are being checked out?</font><a class="headerlink" href="#font-color-blue-what-sort-of-items-are-being-checked-out-font" title="Permalink to this headline">¶</a></h2>
-<p>It appears that Age and Item.type fields may shed some light on the types of material being borrowed, so we will create some charts by those dimensions.</p>
-<p>To create charts in R we typically need to specify the details of the chart design in code, including:</p>
-<ul class="simple">
-<li><p>data source (in this case, counts of data by Age and Item.type respectively),</p></li>
-<li><p>X axis,</p></li>
-<li><p>Y axis,</p></li>
-<li><p>labels,</p></li>
-<li><p>positioning, and</p></li>
-<li><p>any other formatting</p></li>
-</ul>
-<p>This makes it less user friendly than a drag-and-drop tool like Excel or Tableau initially. However it does offer transparency, the ability to automate, and the choice of many different charting packages with their own strengths that can all be used in the one R document together with other analysis logic.</p>
-<p>First we will plot a summary of the count of items by Age in a simple bar chart:</p>
-<p>plot_ly(data=count(data, Age), x = ~Age, y = ~n, type = ‘bar’)</p>
-<div>
-<img src="attachment:image.png" width="500"/>
-</div><p>We see that children’s literature seems to be quite popular, with 39% of items being from the “Juvenile” category.</p>
-<p>The second chart is the much maligned pie chart, setting the data to be a count by Item.Type.</p>
-<p>plot_ly(data=count(data, Item.type), labels = ~Item.type, values= ~n, type = ‘pie’, textinfo = ‘label+percent’)</p>
-<div>
-<img src="attachment:image.png" width="500"/>
-</div><p>Although one might commonly associate libraries with books, 12% of check outs from Brisbane libraries are media items such as DVDs.</p>
-<p>It also becomes apparent the data is not perfect – if you mouse over the interactive plot carefully, there are two items of type “2017” which seems to be a data issue.</p>
-</div>
-<div class="section" id="font-color-blue-titles-font">
-<h2><font color='blue'>Titles</font><a class="headerlink" href="#font-color-blue-titles-font" title="Permalink to this headline">¶</a></h2>
-<p>Finally, we will wrap up with a word cloud to visualise the content borrowed over the pre-holiday period.</p>
-<p>Some data cleaning is required. It appears from the earlier data inspection that many titles also include the author after a slash, so first we will strip out the section before the slash to obtain the real title.</p>
-<p>After converting to a “corpus” dataset of words, we use the “tm” text mining package to clean the data to only include meaningful words, and not the following:</p>
-<ol class="simple">
-<li><p>Numeric digits 0-9 and,</p></li>
-<li><p>Stop words, which are common English words such as “a” and “the” – otherwise they would dominate the word cloud over meaningful words,</p></li>
-<li><p>Media types such as “dvd” – many titles have e.g. “[dvd]” in title, but having analysed item type earlier we want to focus now on the content,</p></li>
-<li><p>And formatting such as punctuation and extra white spaces.</p></li>
-</ol>
-<p>The operations are chained together using dplyr’s pipe operator (%&gt;%).</p>
-<p>titles_corpus &lt;- sapply(strsplit(as.character(data$Title), “/”), <code class="docutils literal notranslate"><span class="pre">[</span></code>, 1) %&gt;%<br />
-VectorSource() %&gt;%<br />
-Corpus() %&gt;%<br />
-tm_map(content_transformer(tolower)) %&gt;%<br />
-tm_map(removeNumbers) %&gt;%<br />
-tm_map(removeWords, stopwords(“english”)) %&gt;%<br />
-tm_map(removeWords, c(“dvd”, “book”, “sound”, “recording”, “novel”)) %&gt;%
-tm_map(removePunctuation) %&gt;%
-tm_map(stripWhitespace)</p>
-<p>We can then generate the word cloud.</p>
-<p>wordcloud(titles_corpus, max.words = 100, scale = c(5, 0.5), random.order = FALSE, colors=brewer.pal(8, “Dark2”))</p>
-<div>
-<img src="attachment:image.png" width="500"/>
-</div><p>Reviewing this visualisation, some key insights would be that Australia appears to be a popular topic for reading, and Christmas titles unsurprisingly feature prominently for the month of December.</p>
-</div>
-<div class="section" id="font-color-blue-call-for-more-snippets-font">
-<h2><font color = 'blue'>Call for more snippets<font><a class="headerlink" href="#font-color-blue-call-for-more-snippets-font" title="Permalink to this headline">¶</a></h2>
-<p>This concludes our trip to the library for now. We are looking to run this as a regular column, so if you have an idea for a cool visualisation, an interesting model, we would like to hear from you! Please send them in to <a class="reference external" href="mailto:ActuariesMag&#37;&#52;&#48;actuaries&#46;asn&#46;au">ActuariesMag<span>&#64;</span>actuaries<span>&#46;</span>asn<span>&#46;</span>au</a>.</p>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "ActuariesInstitute/cookbook",
-            ref: "main",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./docs"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="top_ten_r_packages.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -686,7 +564,7 @@ tm_map(stripWhitespace)</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
